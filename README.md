@@ -5,6 +5,13 @@
 * 对抗生成网络动物园中的[DCGAN](https://github.com/Newmu/dcgan_code)和[CSGAN](https://github.com/po0ya/csgan)
 * 压缩感知理论
 
+## 网络结构：
+* 首先对真实图像用高斯随机观测矩阵进行欠采样，得到一张低清图像。
+* 后接GAN中的生成器配合优化器搭建生成网络，重构图像。
+
+PS：根据压缩感知理论，当满足有限等距性质RIP后，便可以无失真恢复真实图像，高斯随机观测矩阵可以满足RIP。
+使用神经网络求解压缩感知重建问题的优点在于，可以不用使用LASSO或者匹配追踪求出原始信号X的稀疏表示，直接恢复出真实图像。并且有cs数学理论的铺垫。
+
 ## 实验：
 将一张光场图分解后生成的一张[子孔径图像](https://github.com/liangjiubujiu/DCGAN-for-light-field-compressive-sensing/blob/master/01.jpg)进行降采样，模拟根据较低采样率的图像，重建出高分辨率的图像的过程。
 
