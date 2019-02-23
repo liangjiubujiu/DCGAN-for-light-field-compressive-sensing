@@ -11,3 +11,7 @@
 ## 结果：
 
 <img src="https://github.com/liangjiubujiu/DCGAN-for-light-field-compressive-sensing/blob/master/reconstruction.jpg" height="400" width="300" />
+ 
+上方是重建图像，下方是真实图像，对比可知，重建出的图像噪声很大，减弱噪声的优化方法没有想出来。分析可能的原因：
+* 训练数据只有一张子孔径图，神经网络退化成了单纯的迭代或者暴力求解。
+* 生成网络本身是拟合真实数据的高维分布，因此测试结果存在自我发挥创造像素的功能。
